@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aki's portfolio</title>
+  <link rel="icon" type="image/x-icon" href="https://cdn-icons-png.flaticon.com/512/5558/5558214.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Signika+Negative:wght@300&display=swap" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+     
+    }
+
+    /* Define the keyframes for the animation */
+    @keyframes jiggle {
+      0% {
+        transform: scale(1) rotate(0deg);
+        color: rgb(255, 255, 255);
+        box-shadow: 2px 1px 3px rgb(122, 122, 122), 0 0 6px rgb(150, 150, 150), 0 0 9px rgb(213, 213, 213);
+      }
+
+      10% {
+        transform: scale(1.2, 0.85) rotate(6deg);
+      }
+
+      20% {
+        transform: scale(0.85, 1.2) rotate(-6deg);
+      }
+
+      30% {
+        transform: scale(1.09, 0.82) rotate(5deg);
+      }
+
+      40% {
+        transform: scale(0.92, 1.08) rotate(-5deg);
+      }
+
+      50% {
+        transform: scale(1.05, 0.95) rotate(4deg);
+      }
+
+      60% {
+        transform: scale(0.95, 1.05) rotate(-4deg);
+      }
+
+      70% {
+        transform: scale(1.09, 0.91) rotate(3deg);
+      }
+
+      80% {
+        transform: scale(0.91, 1.09) rotate(-2deg);
+      }
+
+      90% {
+        transform: scale(1.09, 0.99) rotate(1deg);
+      }
+
+      100% {
+        transform: scale(1) rotate(0deg);
+        color:rgb(255, 255, 255);
+      }
+    }
+
+    @keyframes sutarto {
+      0%{
+        opacity: 0;
+      }
+      90%{
+        opacity:.1;
+      }
+      100%{
+        transform: translate(-4850px,0);
+        opacity: 1;
+      }
+    }
+    @keyframes disapper {
+      0%{
+        opacity: .9;
+      }
+      5%{
+        opacity: .6;
+      }
+      100%{
+        opacity: 0;
+        transform: translate(-2000px, 0);
+      }
+    }
+    @keyframes ende {
+      10%{
+        transform: translate(-2000px,0);
+        opacity: 1;
+      }
+      100%{
+        transform: translate(0,0);
+        opacity: 0;
+      }
+
+    }
+    @keyframes appear {
+      0%{
+        opacity: 0;
+        transform: translate(-2000px, 0);
+      }
+      10%{
+        opacity: .5;
+        transform: translate(-1000px,0);
+      }
+      100%{
+        opacity: 1;
+        transform: translate(0, 0);
+      }
+    }
+    .end{
+      animation: ende 1.5s ease-in-out 1  forwards;
+    }
+    .appear{
+      animation: apper 1.5s ease-in-out 1  forwards;
+    }
+    .disapper{
+      animation: disapper 1.5s ease-in-out forwards 1;
+    }
+    .start{
+      animation: sutarto 1.5s ease-out 1 forwards;
+    }
+  
+    /* Apply the animation to the letters */
+    .blast {
+      animation: jiggle 1.59s 1 ease-in-out ;
+    }
+
+    body {
+      position: relative;
+      background-color:#DF2E38;
+      height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      width: 100vw;
+      height: 100px;
+      padding: 3px 1px;
+      position: relative;
+      background-color:#E7616180;
+      justify-content: space-around;
+    }
+    header::after{
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 3px;
+      background-color: rgb(46, 46, 46, .6);
+      top: 105%;
+      
+    }
+
+    a {
+      border-radius: 50%;
+  width: auto;
+  height: 100%;
+
+    }
+
+    .icon {
+      border-radius: 50%;
+      height: 100%;
+      width: auto;
+      box-shadow: 1px 3px 4px #FFABAB,
+      1px 4px 10px #ff9c9c;
+    }
+
+    #pg1 {
+      height: 450px;
+      position: absolute;
+      width: 890px;
+      bottom: 100px;
+      left: 150px;
+      display: flex;
+      padding-left: 10px;
+      flex-direction: column;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    h1 {
+      font-size: 150px;
+      
+display: flex;
+padding-left: 5px;
+height:90%;
+width: 20%;
+      text-transform: uppercase;
+   
+    }
+    #aboutme::before{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      height: 100%;
+      transform: scaleX(0);
+      left: 0%;
+      width: 100%;
+      background-color:#D21312E6;
+      transform-origin: bottom left;
+      transition: transform .5s linear;
+    }
+    #aboutme:hover::before{
+      transform:scaleX(1);
+    
+    }
+    #aboutme:hover{
+      color:black;
+    }
+span{
+position: relative;
+  height: 100%;
+  color: #FCC8D1;
+  width: 90%;
+  text-align: center;
+}
+    h3 {
+      display: flex;
+width: 39%;
+height:auto;
+padding: 0 13px;
+margin: 5px 0;
+      font-size: 5rem;
+     
+    }
+    h5{
+      display: flex;
+width: 80%;
+height:90%;
+      font-size: 5rem;
+    padding: 0 17px;
+   
+    }
+    #aboutme {
+      position: absolute;
+      text-transform: uppercase;
+      font-family: 'Passion One', cursive;
+      display: flex;
+      justify-content: center;
+      border-radius: 5px;
+      z-index: 1;
+     color: white;
+      align-items: center;
+      border: 3px solid #D21312E6;
+      box-shadow: 2px 2px 3px #FCC8D1,1px 1px 6px #FCC8D1;
+      height: 70px;
+      width: 250px;
+      bottom: 150px;
+      right: 150px;
+    }
+
+/*tool tio*/
+/* .tooltiptext {
+  visibility: hidden;
+  width: 100%;
+
+  opacity: .7;
+  background-color: rgb(255, 202, 211, .5);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 90%;
+text-align: center;
+word-wrap: normal;
+  left: 50%;
+  margin-left: -60px;
+  transition: .1s ease-in-out .3s;
+height: auto;
+} */
+/* a .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+
+} */
+
+/* a:hover .tooltiptext {
+  
+  visibility: visible;
+} */
+
+/*page 2 */
+
+#pg2{
+  height: 450px;
+      position: absolute;
+      width: 890px;
+      bottom: 100px;
+      left: 5000px;
+      opacity: 0;
+      padding-left: 10px;
+display: flex;
+flex-direction: column;
+    
+}
+#pg2 p{
+padding: 10px 5px;
+letter-spacing: 3px;
+text-shadow: .5px .5px 2px;
+font-family: 'Sigmar', cursive;
+color: rgb(255, 206, 238);
+word-wrap: normal;
+font-size: 2rem;
+}
+@media screen and (max-width: 450px) {
+  *{
+    font-family: 'Passion One', cursive;
+  }
+  header{
+    width: 100vw;
+    height: 10vh;
+  }
+  #pg1{
+    height: 27vh;
+    width: 100vw;
+    top: 100px;
+    left: 0;
+  }
+  h1{
+    font-size: 15vw;
+  }
+
+  h3,h5{
+font-size: 10vw;
+letter-spacing: 0px;
+  }
+  #pg2{
+top: calc(120px + 30vh);
+left: 0;
+opacity: 1;
+width: 100vw;
+padding: 10px;
+  }
+ #pg2 p{
+    font-size: 20px;
+  }
+  #aboutme{
+    display: none;
+  }
+}
+  </style>
+</head>
+
+<body>
+    <div id="bg"></div>
+  <div id="stbg"></div>
+  <header>
+    <a href="https://discord.com/users/952975852801523762" target="_blank">
+      <!-- <span class="tooltiptext">Discord</span> -->
+      <img class="icon"
+        src=" https://i.pinimg.com/564x/33/41/a0/3341a09c7cd9415dce7566720d9c63d9.jpg" alt="discord"></a>
+    <a href="https://osu.ppy.sh/users/26956487" target="_blank">
+      <!-- <span class="tooltiptext">Osu</span> -->
+      <img class="icon"
+        src='https://i.pinimg.com/564x/d4/bf/87/d4bf87262ef8bd6d2db9397201c46285.jpg' alt='osu'></a>
+    <a href="https://github.com/Akio6265" target="_blank">
+      <!-- <span class="tooltiptext">Git-Hub</span> -->
+      <img class="icon"
+        src='https://i.pinimg.com/564x/89/25/a6/8925a64f6b430a0b1bb061dfbfa66bf4.jpg' alt='github'> </a>
+    <a href="https://enka.network/u/818286284/" target="_blank">
+      <!-- <span class="tooltiptext">Genshin-Impact</span> -->
+      <img class="icon"
+        src="https://i.pinimg.com/564x/37/f8/88/37f8880ed03d9457967cc49fe46efb69.jpg" alt="genshin">
+    </a>
+    <a href="https://open.spotify.com/user/h8xfnfhzi5sdov8kq7h238r2n" target="_blank">
+      <!-- <span class="tooltiptext">Spotify</span> -->
+      <img class="icon" src="https://i.pinimg.com/564x/e9/d0/44/e9d0441e2b1c366ee1cfbd189d236cb9.jpg" alt="spotify"></a>
+  </header>
+
+  <main id="pg1">
+    <h1>
+      <span>h</span><span>i</span>
+    </h1>
+    <h3>
+      <span>I'</span><span>m</span><span>&nbsp;</span><span>A</span><span>k</span><span>i</span>
+    </h3>
+    <h5>
+      <span>W</span><span>e</span><span>b</span><span>&nbsp;</span><span>D</span><span>e</span><span>v</span><span>e</span><span>l</span><span>o</span><span>p</span><span>e</span><span>r</span>
+    </h5>
+
+  </main>
+  <div id="aboutme">
+about me
+  </div>
+<main id="pg2">
+<p>
+  Hello! my name is Aki.
+</p>
+  <p>
+  I'm from India/Asia. I'm in last year of High school,and I'm learning web development as my personal interest.
+</p>
+</main>
+
+  <script>
+    let letters = document.querySelectorAll('span');
+    let image = document.querySelectorAll('.icon');
+    let box = document.querySelector('#aboutme');
+
+    let pg1 = document.querySelector('#pg1');
+    let pg2 = document.querySelector('#pg2')
+    function animate(ehe, index) {
+      ehe.addEventListener('mouseover', (e) => {
+        e.target.classList.add('blast')
+        setTimeout(() => {
+          e.target.classList.remove('blast')
+        }, 1800);
+      });
+    }
+    let i=0;
+    box.addEventListener('click', (e)=>{
+      e.target.classList.add('blast')
+        setTimeout(() => {
+          e.target.classList.remove('blast')
+        }, 1800);
+      if(i%2 ==0){
+        pg2.classList.remove('end');
+    pg1.classList.remove('apper');
+    e.target.textContent = 'go back';
+        pg2.classList.add('start');
+    pg1.classList.add('disapper');
+      }
+   else{
+    pg2.classList.remove('start');
+    pg1.classList.remove('disapper');
+    e.target.textContent = 'About me';
+    pg2.classList.add('end');
+    pg1.classList.add('apper');
+   }
+    i++
+    });
+    image.forEach(animate);
+    letters.forEach(animate);
+    box.addEventListener('mouseover',(e)=>{
+      e.target.classList.add('blast')
+        setTimeout(() => {
+          e.target.classList.remove('blast')
+        }, 1800);
+      
+    })
+    </script>
+
+</body>
+</html>
